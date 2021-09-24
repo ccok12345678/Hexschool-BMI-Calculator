@@ -4,11 +4,41 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A BMI Calculator, BMI 計算器">
+  <meta name="keywords" content="身高, 體重, 健康">
+  <meta name="author" content="Karl Yang, ccok12345678@hotmail.com">
+  <link rel="shortcut icon" href="images/weight_scalle_icon.png" t-ype="image/x-icon">
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="//db.onlinewebfonts.com/c/344d17417b87d35e88d9df15bea12e2e?family=SFNSDisplay" rel="stylesheet" type="text/css"/>
   <link rel="stylesheet" href="css/style.css">
-  <title>Document</title>
-
 </head>
 <body>
+  <div class="wrap">
+    <header class="header">
+      <h1 class="headerLogo"><a href="#">BMI Calculator, BMI 計算器</a></h1>
+      <form action="index.html" class="calculator">
+        <div class="getValue">
+          <label for="userHeight">身高 cm：</label>
+          <input type="number" name="userHeight" id="userHeight" placeholder="請輸入身高">
+          <label for="userWeight">體重 kg：</label>
+          <input type="number" name="userWeight" id="userWeight" placeholder="請輸入體重">
+        </div>
+        <button class="submit">看結果</button>
+        <div class="showResult"></div>
+      </form>
+    </header>
+    <main class="content">
+      <div class="contentBar">
+        <h2>BMI 紀錄</h2>
+        <a href="#" title="清除記錄"><i class="fas fa-eraser"></i></a>
+      </div>
+      <ul class="resultList"></ul>
+    </main>
+    <footer class="footer">
+      <a href="index.html" class="footerLogo"></a>
+    </footer>
+  </div>
   
   <script src="js/all.js"></script>
 </body>
