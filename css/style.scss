@@ -69,6 +69,7 @@
 .content {
   margin: 0 auto;
   width: 61%;
+  padding-bottom: 62px;
 
   .contentBar {
     display: flex;
@@ -90,7 +91,6 @@
     }
   }
   .result {
-
     width: 100%;
     font-size: 20px;
     color: #4a4a4a;
@@ -100,17 +100,13 @@
       display: block;
       display: flex;
       justify-content: space-between;
-      // padding-left: 12px;
+      padding-left: 12px;
       padding-right: 11px;
       background: #fff;
-      // border-left: #86d73f solid 7px;
+      border-left: 7px solid #86d73f;
+      box-shadow: inset 2px 0 0 rgba(134, 215, 63, 0.29);
       margin-bottom: 16px;
       
-      th {
-        
-        width: 7px;
-        background: #86d73f; 
-      }
       td {
         padding: 21px 0;
         display: flex;
@@ -125,5 +121,18 @@
       }
     }
     
+  }
+}
+.footer {
+  background: #ffd366;
+  display: flex;
+  justify-content: center;
+
+  a {
+    display: block;
+    margin: 18px 0;
+    background: url(../images/BMI_logo02.png);
+    height: 55px;
+    width: 55px;
   }
 }
