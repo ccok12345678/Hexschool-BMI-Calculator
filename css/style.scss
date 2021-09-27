@@ -63,14 +63,101 @@
     }
     .submit:hover {
       box-shadow: 0 1px 6px 3px #ffc432a3;
-    }  
+    }
+    .rstBtn {
+      display: none;
+      position: relative;
+      height: 123px;
+      width: 123px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0);
+      
+      h2 {
+        font-size: 32px;
+      }
+      p {
+        font-size: 14px;
+      }
+      i {
+        position: absolute;
+        bottom: 3px;
+        right: -10px;
+        padding: 7.5px;
+        font-size: 15px;
+        border-radius: 50%;
+        border: 3px solid #424242;
+        color: #424242;
+        transform: rotate(90deg);
+      }
+    }
+    .normal {
+      color: #86d73f;
+      border: 6px solid #86d73f;
+      
+      i {
+        background: #86d73f;
+        
+      }
+    }
+    .normal:hover {
+      box-shadow: 0 1px 6px 3px #86d73fa3;
+    }
+    .thiness {
+      color: #31baf9;
+      border: 6px solid #31baf9;
+      
+      i {
+        background: #31baf9;
+        
+      }
+    }
+    .thiness:hover {
+      box-shadow: 0 1px 6px 3px #31baf9a3;
+    }
   }
+  .overweight {
+    color: #ff982d;
+    border: 6px solid #ff982d;
+    
+    i {
+      background: #ff982d;
+      
+    }
+  }
+  .overweight:hover {
+    box-shadow: 0 1px 6px 3px #ff982da3;
+  }
+  .obese1, .obese2 {
+    color: #ff6c03;
+    border: 6px solid #ff6c03;
+    
+    i {
+      background: #ff6c03;
+      
+    }
+  }
+  .obese1:hover, .obese2:hover {
+    box-shadow: 0 1px 6px 3px #ff6c03a3;
+  }
+  .obese3 {
+    color: #ff1200;
+    border: 6px solid #ff1200;
+    
+    i {
+      background: #ff1200;
+      
+    }
+  }
+  .obese3:hover {
+    box-shadow: 0 1px 6px 3px #ff1200a3;
+  }
+  
 }
 .content {
   margin: 0 auto;
   width: 61%;
   padding-bottom: 62px;
-
+  
   .contentBar {
     display: flex;
     justify-content: center;
@@ -102,9 +189,7 @@
       justify-content: space-between;
       padding-left: 12px;
       padding-right: 11px;
-      background: #fff;
-      border-left: 7px solid #86d73f;
-      box-shadow: inset 2px 0 0 rgba(134, 215, 63, 0.29);
+      background: #fff;      
       margin-bottom: 16px;
       
       td {
@@ -120,7 +205,26 @@
         margin-right: 7px;
       }
     }
-    
+    .normal {
+      border-left: 7px solid #86d73f;
+      box-shadow: inset 3px 0 1px -1px rgba(134, 215, 63, 0.29);
+    }
+    .thiness {
+      border-left: 7px solid #31baf9;
+      box-shadow: inset 3px 0 1px -1px rgba(49, 186, 249, 0.29);
+    }
+    .overweight {
+      border-left: 7px solid #ff982d;
+      box-shadow: inset 3px 0 1px -1px rgba(255,152,45,0.29);
+    }
+    .obese1, .obese2 {
+      border-left: 7px solid #ff6c03;
+      box-shadow: inset 3px 0 1px -1px rgba(255, 108, 3, 0.29);
+    }
+    .obese3 {
+      border-left: 7px solid #ff1200;
+      box-shadow: inset 3px 0 1px -1px rgba(255, 18, 0, 0.29);
+    }
   }
 }
 .footer {

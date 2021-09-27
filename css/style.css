@@ -121,6 +121,81 @@ a {
 .header .calculator .submit:hover {
   box-shadow: 0 1px 6px 3px #ffc432a3;
 }
+.header .calculator .rstBtn {
+  display: none;
+  position: relative;
+  height: 123px;
+  width: 123px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0);
+}
+.header .calculator .rstBtn h2 {
+  font-size: 32px;
+}
+.header .calculator .rstBtn p {
+  font-size: 14px;
+}
+.header .calculator .rstBtn i {
+  position: absolute;
+  bottom: 3px;
+  right: -10px;
+  padding: 7.5px;
+  font-size: 15px;
+  border-radius: 50%;
+  border: 3px solid #424242;
+  color: #424242;
+  transform: rotate(90deg);
+}
+.header .calculator .normal {
+  color: #86d73f;
+  border: 6px solid #86d73f;
+}
+.header .calculator .normal i {
+  background: #86d73f;
+}
+.header .calculator .normal:hover {
+  box-shadow: 0 1px 6px 3px #86d73fa3;
+}
+.header .calculator .thiness {
+  color: #31baf9;
+  border: 6px solid #31baf9;
+}
+.header .calculator .thiness i {
+  background: #31baf9;
+}
+.header .calculator .thiness:hover {
+  box-shadow: 0 1px 6px 3px #31baf9a3;
+}
+.header .overweight {
+  color: #ff982d;
+  border: 6px solid #ff982d;
+}
+.header .overweight i {
+  background: #ff982d;
+}
+.header .overweight:hover {
+  box-shadow: 0 1px 6px 3px #ff982da3;
+}
+.header .obese1, .header .obese2 {
+  color: #ff6c03;
+  border: 6px solid #ff6c03;
+}
+.header .obese1 i, .header .obese2 i {
+  background: #ff6c03;
+}
+.header .obese1:hover, .header .obese2:hover {
+  box-shadow: 0 1px 6px 3px #ff6c03a3;
+}
+.header .obese3 {
+  color: #ff1200;
+  border: 6px solid #ff1200;
+}
+.header .obese3 i {
+  background: #ff1200;
+}
+.header .obese3:hover {
+  box-shadow: 0 1px 6px 3px #ff1200a3;
+}
 
 .content {
   margin: 0 auto;
@@ -158,8 +233,6 @@ a {
   padding-left: 12px;
   padding-right: 11px;
   background: #fff;
-  border-left: 7px solid #86d73f;
-  box-shadow: inset 2px 0 0 rgba(134, 215, 63, 0.29);
   margin-bottom: 16px;
 }
 .content .result tr td {
@@ -173,6 +246,26 @@ a {
 .content .result tr .small {
   font-size: 12px;
   margin-right: 7px;
+}
+.content .result .normal {
+  border-left: 7px solid #86d73f;
+  box-shadow: inset 3px 0 1px -1px rgba(134, 215, 63, 0.29);
+}
+.content .result .thiness {
+  border-left: 7px solid #31baf9;
+  box-shadow: inset 3px 0 1px -1px rgba(49, 186, 249, 0.29);
+}
+.content .result .overweight {
+  border-left: 7px solid #ff982d;
+  box-shadow: inset 3px 0 1px -1px rgba(255, 152, 45, 0.29);
+}
+.content .result .obese1, .content .result .obese2 {
+  border-left: 7px solid #ff6c03;
+  box-shadow: inset 3px 0 1px -1px rgba(255, 108, 3, 0.29);
+}
+.content .result .obese3 {
+  border-left: 7px solid #ff1200;
+  box-shadow: inset 3px 0 1px -1px rgba(255, 18, 0, 0.29);
 }
 
 .footer {

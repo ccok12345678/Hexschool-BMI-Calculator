@@ -1,6 +1,9 @@
 // eventListeners
 const form = document.querySelector('.js_calculator');
-form.addEventListener('submit', setData ,false);
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  setData()
+},false);
 
 const cleaner = document.querySelector('.js_cleaner');
 cleaner.addEventListener('click', (e) => {
@@ -23,6 +26,8 @@ function init() {
 function setData() {
   const userHeight = document.querySelector('#userHeight').value;
   const userWeight = document.querySelector('#userWeight').value;
+  document.querySelector('#userHeight').value ='';
+  document.querySelector('#userWeight').value ='';
   
   if (userHeight <= 0 || userWeight <= 0) {
     alert('請填入正確的身高、體重。');
@@ -31,8 +36,13 @@ function setData() {
   
   const BMI = getBMI(userHeight, userWeight);  
   setLocalStorage(BMI, userHeight, userWeight);
-
   renderContent();
+
+  const rstBtn = document.querySelector('.js_rstBtn');
+  const submitBtn = document.querySelector('.js_submit');
+  rstBtn.style.display = 'none';
+  submitBtn.style.display = 'block';
+  renderBtn();
 }
 
 function getBMI(height, weight) {
@@ -44,17 +54,17 @@ function getBMI(height, weight) {
 
 function BMI_determ(BMI) {
   if (BMI < 18.5) {
-    return '過輕';    
+    return ['過輕', 'thiness'];    
   } else if (18.5 <= BMI && BMI <= 25) {
-    return '理想';
+    return ['理想', 'normal'];
   } else if (25 < BMI && BMI <= 30) {
-    return '過重';
+    return ['過重', 'overweight'];
   } else if (30 < BMI && BMI <= 35) {
-    return '輕度肥胖';
+    return ['輕度肥胖', 'obese1'];
   } else if (35 < BMI && BMI <= 40) {
-    return '中度肥胖';
+    return ['中度肥胖', 'obese2'];
   } else {
-    return '嚴重肥胖';
+    return ['嚴重肥胖', 'obese3'];
   }
 }
 
@@ -80,16 +90,38 @@ function clearData() {
   
   // render function
   renderContent();
+  renderBtn();
 }
 
 // render function
 function renderContent() {
   const table = document.querySelector('.js_result');
   let str = '';
-  for (let i = 0; i < BMI_Data.length; i++) {
-    str += `<tr><td>${BMI_Data[i].determ}</td><td><span class="small">BMI</span> ${BMI_Data[i].BMI}</td><td><span class="small">weight</span>${BMI_Data[i].weight}kg</td><td><span class="small">height</span>${BMI_Data[i].height}cm</td><td><span class="small">${BMI_Data[i].date}</span></td></tr>`;
+  for (let i = BMI_Data.length - 1; i >= 0 ; i --) {
+    str += `
+      <tr class="${BMI_Data[i].determ[1]}">
+        <td>${BMI_Data[i].determ[0]}</td>
+        <td><span class="small">BMI</span>${BMI_Data[i].BMI}</td>
+        <td><span class="small">weight</span>${BMI_Data[i].weight}kg</td>
+        <td><span class="small">height</span>${BMI_Data[i].height}cm</td>
+        <td><span class="small">${BMI_Data[i].date}</span></td>
+      </tr>
+    `;
   }
-
   table.innerHTML = str;
 }
 
+function renderBtn() {
+  const rstBtn = document.querySelector('.js_rstBtn');
+  const submitBtn = document.querySelector('.js_submit');
+  const len = BMI_Data.length;
+
+  if (len === 0) {
+    rstBtn.style.display = 'none';
+    submitBtn.style.display = 'block';
+  } else {
+    rstBtn.setAttribute('class', `rstBtn js_rstBtn ${BMI_Data[len - 1].determ[1]}`);
+    const rst = document.querySelector('.js_rstBtn h2');
+    rst.innerHTML = BMI_Data[len -1].BMI;
+  }
+}
