@@ -2,15 +2,13 @@
 const form = document.querySelector('.js_calculator');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  setData()
+  proceedData()
 },false);
-
 const cleaner = document.querySelector('.js_cleaner');
 cleaner.addEventListener('click', (e) => {
   e.preventDefault();
-  clearData();
+  eraseData();
 }, false)
-
 
 // locaStorage
 const oldData = JSON.parse(localStorage.getItem('BMI-data'));
@@ -23,7 +21,8 @@ function init() {
   renderContent();
 }
 
-function setData() {
+// proceeding function
+function proceedData() {
   const userHeight = document.querySelector('#userHeight').value;
   const userWeight = document.querySelector('#userWeight').value;
   document.querySelector('#userHeight').value ='';
@@ -37,14 +36,10 @@ function setData() {
   const BMI = getBMI(userHeight, userWeight);  
   setLocalStorage(BMI, userHeight, userWeight);
   renderContent();
-
-  const rstBtn = document.querySelector('.js_rstBtn');
-  const submitBtn = document.querySelector('.js_submit');
-  rstBtn.style.display = 'none';
-  submitBtn.style.display = 'block';
   renderBtn();
 }
 
+// BMI
 function getBMI(height, weight) {
   height = height / 100;
   let BMI = weight / Math.pow(height, 2);
@@ -68,6 +63,7 @@ function BMI_determ(BMI) {
   }
 }
 
+// proceed localStorage
 function setLocalStorage(userBMI, userHeight, userWeight) {
   const result = BMI_determ(userBMI);
   const today = moment().format('MM-DD-YYYY'); 
@@ -83,7 +79,8 @@ function setLocalStorage(userBMI, userHeight, userWeight) {
   localStorage.setItem('BMI-data', str);
 }
 
-function clearData() {
+// cleaner
+function eraseData() {
   BMI_Data = [];
   const str = JSON.stringify(BMI_Data);
   localStorage.setItem('BMI-data', str);
@@ -93,7 +90,7 @@ function clearData() {
   renderBtn();
 }
 
-// render function
+// render functions
 function renderContent() {
   const table = document.querySelector('.js_result');
   let str = '';
@@ -112,16 +109,23 @@ function renderContent() {
 }
 
 function renderBtn() {
-  const rstBtn = document.querySelector('.js_rstBtn');
   const submitBtn = document.querySelector('.js_submit');
+  const rstBtn = document.querySelector('.js_rstBtn');
+  const tag = document.querySelector('.js_determTag');
   const len = BMI_Data.length;
 
   if (len === 0) {
-    rstBtn.style.display = 'none';
     submitBtn.style.display = 'block';
+    rstBtn.style.display = 'none';
+    tag.style.display = 'none';
   } else {
+    submitBtn.style.display = 'none';
+    rstBtn.style.display = 'block';
+    tag.style.display = 'block';
     rstBtn.setAttribute('class', `rstBtn js_rstBtn ${BMI_Data[len - 1].determ[1]}`);
+    tag.setAttribute('class', `determTag js_determTag ${BMI_Data[len - 1].determ[1]}`);
     const rst = document.querySelector('.js_rstBtn h2');
     rst.innerHTML = BMI_Data[len -1].BMI;
+    tag.innerHTML = BMI_Data[len -1].determ[0];
   }
 }

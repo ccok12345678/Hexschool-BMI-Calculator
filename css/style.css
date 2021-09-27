@@ -166,35 +166,54 @@ a {
 .header .calculator .thiness:hover {
   box-shadow: 0 1px 6px 3px #31baf9a3;
 }
-.header .overweight {
+.header .calculator .overweight {
   color: #ff982d;
   border: 6px solid #ff982d;
 }
-.header .overweight i {
+.header .calculator .overweight i {
   background: #ff982d;
 }
-.header .overweight:hover {
+.header .calculator .overweight:hover {
   box-shadow: 0 1px 6px 3px #ff982da3;
 }
-.header .obese1, .header .obese2 {
+.header .calculator .obese1, .header .calculator .obese2 {
   color: #ff6c03;
   border: 6px solid #ff6c03;
 }
-.header .obese1 i, .header .obese2 i {
+.header .calculator .obese1 i, .header .calculator .obese2 i {
   background: #ff6c03;
 }
-.header .obese1:hover, .header .obese2:hover {
+.header .calculator .obese1:hover, .header .calculator .obese2:hover {
   box-shadow: 0 1px 6px 3px #ff6c03a3;
 }
-.header .obese3 {
+.header .calculator .obese3 {
   color: #ff1200;
   border: 6px solid #ff1200;
 }
-.header .obese3 i {
+.header .calculator .obese3 i {
   background: #ff1200;
 }
-.header .obese3:hover {
+.header .calculator .obese3:hover {
   box-shadow: 0 1px 6px 3px #ff1200a3;
+}
+.header .determTag {
+  font-size: 32px;
+  margin-left: 18px;
+}
+.header .normal {
+  color: #86d73f;
+}
+.header .thiness {
+  color: #31baf9;
+}
+.header .overweight {
+  color: #ff982d;
+}
+.header .obese1, .header .obese2 {
+  color: #ff6c03;
+}
+.header .obese3 {
+  color: #ff1200;
 }
 
 .content {

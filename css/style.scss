@@ -23,7 +23,6 @@
     white-space: nowrap;
     overflow: hidden;
   }
-
   .calculator {
     display: flex;
     align-items: center;
@@ -96,7 +95,6 @@
       
       i {
         background: #86d73f;
-        
       }
     }
     .normal:hover {
@@ -108,50 +106,64 @@
       
       i {
         background: #31baf9;
-        
       }
     }
     .thiness:hover {
       box-shadow: 0 1px 6px 3px #31baf9a3;
     }
+    .overweight {
+      color: #ff982d;
+      border: 6px solid #ff982d;
+      
+      i {
+        background: #ff982d;      
+      }
+    }
+    .overweight:hover {
+      box-shadow: 0 1px 6px 3px #ff982da3;
+    }
+    .obese1, .obese2 {
+      color: #ff6c03;
+      border: 6px solid #ff6c03;
+      
+      i {
+        background: #ff6c03;
+      }
+    }
+    .obese1:hover, .obese2:hover {
+      box-shadow: 0 1px 6px 3px #ff6c03a3;
+    }
+    .obese3 {
+      color: #ff1200;
+      border: 6px solid #ff1200;
+      
+      i {
+        background: #ff1200;
+      }
+    }
+    .obese3:hover {
+      box-shadow: 0 1px 6px 3px #ff1200a3;
+    }
+  }
+  .determTag {
+    font-size: 32px;
+    margin-left: 18px;
+  }
+  .normal {
+    color: #86d73f;
+  }
+  .thiness {
+    color: #31baf9;
   }
   .overweight {
     color: #ff982d;
-    border: 6px solid #ff982d;
-    
-    i {
-      background: #ff982d;
-      
-    }
-  }
-  .overweight:hover {
-    box-shadow: 0 1px 6px 3px #ff982da3;
   }
   .obese1, .obese2 {
     color: #ff6c03;
-    border: 6px solid #ff6c03;
-    
-    i {
-      background: #ff6c03;
-      
-    }
-  }
-  .obese1:hover, .obese2:hover {
-    box-shadow: 0 1px 6px 3px #ff6c03a3;
   }
   .obese3 {
     color: #ff1200;
-    border: 6px solid #ff1200;
-    
-    i {
-      background: #ff1200;
-      
-    }
   }
-  .obese3:hover {
-    box-shadow: 0 1px 6px 3px #ff1200a3;
-  }
-  
 }
 .content {
   margin: 0 auto;
