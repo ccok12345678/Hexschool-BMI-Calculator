@@ -113,6 +113,7 @@ function renderBtn() {
   const rstBtn = document.querySelector('.js_rstBtn');
   const tag = document.querySelector('.js_determTag');
   const len = BMI_Data.length;
+  const rst = document.querySelector('.js_rstBtn h2');
 
   if (len === 0) {
     submitBtn.style.display = 'block';
@@ -124,7 +125,6 @@ function renderBtn() {
     tag.style.display = 'block';
     rstBtn.setAttribute('class', `rstBtn js_rstBtn ${BMI_Data[len - 1].determ[1]}`);
     tag.setAttribute('class', `determTag js_determTag ${BMI_Data[len - 1].determ[1]}`);
-    const rst = document.querySelector('.js_rstBtn h2');
     rst.innerHTML = BMI_Data[len -1].BMI;
     tag.innerHTML = BMI_Data[len -1].determ[0];
   }
